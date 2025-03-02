@@ -30,10 +30,10 @@ const eslintConfig = [
     rules: {
       ...prettier.rules,
       "prettier/prettier": ["error", {
-        semi: false,
         trailingComma: "all",
         tabWidth: 2,
-        printWidth: 100,
+        printWidth: 80,
+        endOfLine: "lf",
       }],
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
