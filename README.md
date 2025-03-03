@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fit Flow
 
-## Getting Started
+## 📌 Sobre o Projeto
+O **Fit Flow** é um aplicativo projetado para ajudar usuários a gerenciar seus treinos de forma organizada e eficiente. O app permite criar, salvar e acompanhar "Flows" de treino, facilitando a gestão das rotinas de exercícios.
 
-First, run the development server:
+## 🎯 Funcionalidades
+- 🔍 **Pesquisa de Flows**: Campo de busca para encontrar treinos rapidamente.
+- 📆 **Treinos do Dia**: Sugestão de treinos programados para o dia atual.
+- 📋 **Lista de Flows**: Exibição de Flows ativos e salvos pelo usuário.
+- ➕ **Criação de Novo Flow**: Interface para adicionar novos treinos com upload de capa e definição de dificuldade.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🛠️ Tecnologias Utilizadas
+- **Framework**: Next.js + TypeScript
+- **Gerenciamento de Formulários**: React Hook Form
+- **Validação**: Zod
+- **Upload de Arquivos**: react-dropzone
+- **Estilização**: Tailwind CSS
+- **Gerenciamento de Estado**: Context API
+
+## 📂 Estrutura do Projeto
+```
+fit-flow/
+│── src/
+│   ├── app/               # Diretório para rotas e layouts (Next.js App Router)
+│   │   ├── layout.tsx     # Layout padrão da aplicação
+│   │   ├── page.tsx       # Página inicial (Home)
+│   │   ├── flows/         # Páginas relacionadas aos Flows
+│   ├── components/        # Componentes reutilizáveis
+│   ├── hooks/             # Hooks personalizados
+│   ├── context/           # Context API para gerenciamento de estado
+│   ├── lib/               # Funções auxiliares e configurações globais
+│   ├── assets/            # Imagens e ícones
+│── public/                # Arquivos estáticos
+│── .env.local             # Variáveis de ambiente
+│── next.config.js         # Configurações do Next.js
+│── tsconfig.json          # Configuração do TypeScript
+│── package.json           # Dependências e scripts do projeto
+│── README.md              # Documentação do projeto
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Como Executar o Projeto
+### 1️⃣ Clonar o repositório
+```sh
+git clone https://github.com/seu-usuario/fit-flow.git
+cd fit-flow
+```
+### 2️⃣ Instalar dependências
+```sh
+npm install # Ou yarn install
+```
+### 3️⃣ Iniciar o projeto
+```sh
+npm run dev # Ou yarn dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✅ Roadmap
+- [X] Criar estrutura base do projeto
+- [ ] Implementar tela Home
+- [ ] Criar funcionalidade de busca
+- [ ] Adicionar autenticação de usuários
+- [ ] Implementar integração com backend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Contribuição
+1. Fork o repositório
+2. Crie uma branch com sua feature (`git checkout -b minha-feature`)
+3. Commit suas mudanças (`git commit -m 'Minha feature'`)
+4. Push para a branch (`git push origin minha-feature`)
+5. Abra um Pull Request
 
-## Learn More
+## 📄 Licença
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-To learn more about Next.js, take a look at the following resources:
+---
+Feito com ❤️ para a comunidade fitness! 💪
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
