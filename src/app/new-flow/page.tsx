@@ -1,6 +1,8 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ImageIcon } from "lucide-react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z, ZodType } from "zod";
 
@@ -56,9 +58,24 @@ const NewFlow = () => {
     name: coverImageName,
   } = register("coverImage");
 
+  const [selectedImage, setSelectedImage] = useState<File | undefined>(
+    undefined,
+  );
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      setSelectedImage(files[0]);
+    } else {
+      setSelectedImage(undefined);
+    }
+  };
+
   const onSubmit = async (data: newFlowData) => {
     console.log(data);
   };
+
+  // const imageIcon = { ImageIcon: <ImageIcon /> };
 
   return (
     <>
@@ -112,10 +129,16 @@ const NewFlow = () => {
               <label className="font-semibold">Capa:</label>
 
               <label
-                className="w-[330px] rounded-[6px] bg-white p-2.5 outline-1"
+                className="flex w-[330px] flex-row gap-2.5 rounded-[6px] bg-white p-2.5 outline-1"
                 htmlFor="imageInput"
               >
-                Selecione uma imagem:
+                {selectedImage ? (
+                  <>
+                    <ImageIcon /> {selectedImage.name}
+                  </>
+                ) : (
+                  "Selecione uma imagem:"
+                )}
               </label>
 
               <input
@@ -129,6 +152,7 @@ const NewFlow = () => {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   // Chama o onChange do react-hook-form
                   coverImageOnChange(e);
+                  handleChange(e);
                 }}
               />
 
